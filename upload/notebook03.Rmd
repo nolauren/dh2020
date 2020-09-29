@@ -130,7 +130,7 @@ Let's take a look at specific films.
 
 ```{r}
 movie_subset <- filter(
-  data = movies,
+  movies,
   title %in% c("Black Panther", "The Lord of the Rings: The Return of the King", "The Martian")
 )
 
@@ -143,7 +143,7 @@ ggplot(data = movies, aes(x = gross, y = rating)) +
 Let's take a look at a random set of movies (this case 15).
 
 ```{r}
-movie_subset <- slice_sample(data = movies, n = 15)
+movie_subset <- slice_sample(movies, n = 15)
 
 ggplot(data = movies, aes(x = gross, y = rating)) +
   geom_point(color = "grey95") +
@@ -156,8 +156,8 @@ Let's take a look at the top 10 grossing films.
 
 
 ```{r}
-movie_subset <- arrange(data = movies, desc(gross))
-movie_subset <- slice_head(data = movie_subset, n = 10)
+movie_subset <- arrange(movies, desc(gross))
+movie_subset <- slice_head(movie_subset, n = 10)
 
 ggplot(data = movies, aes(x = gross, y = rating)) +
   geom_point(color = "grey95") +
@@ -170,7 +170,7 @@ Let's take a look at the crime films.
 
 
 ```{r}
-movie_subset <- filter(data = movie, genre == "Crime")
+movie_subset <- filter(movies, genre == "Crime")
 
 ggplot(data = movies, aes(x = gross, y = rating)) +
   geom_point(color = "grey95") +
