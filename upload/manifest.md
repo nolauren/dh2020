@@ -9,4 +9,4 @@ data/sotu_token.csv.gz
 notebook05.Rmd
 data/scotus_cites_dh.csv
 data/scotus_dh.csv
-data/scotus_cites_dh.csv
+data/scotus_gr_all_dh.csv
